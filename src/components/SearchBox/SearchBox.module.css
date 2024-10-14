@@ -1,0 +1,19 @@
+.searchBox {
+  display: flex;
+  width: 280px;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.searchLabel {
+  font-size: 18px;
+  line-height: 1.33;
+  letter-spacing: -0.01em;
+}
+.searchInput {
+  width: 100%;
+  margin-top: 5px;
+  border-radius: 4px;
+  font-size: 18px;
+  padding: 6px 15px;
+}
