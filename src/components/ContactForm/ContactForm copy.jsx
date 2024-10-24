@@ -2,7 +2,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 
 import { useDispatch } from "react-redux";
-import { addContact, updateContact } from "../../redux/contacts/operations";
+import { addContact } from "../../redux/contacts/operations";
 
 import s from "./ContactForm.module.css";
 
@@ -35,32 +35,17 @@ const isPhone = (value) => {
   return regex.test(value);
 };
 
-const ContactForm = ({
-  contact = { id: null, name: "", number: "" },
-  onClose,
-}) => {
+const ContactForm = () => {
   const dispatch = useDispatch();
+
   const initialValues = {
-    name: contact.name,
-    number: contact.number,
+    name: "",
+    number: "",
   };
-  const isAdd = !contact.name;
-  const textBtn = isAdd ? "Add contact" : "Save";
 
   const handleSubmit = (values, options) => {
     values.number = verNumber;
-    if (isAdd) {
-      dispatch(addContact(values));
-    } else {
-      dispatch(
-        updateContact({
-          id: contact.id,
-          name: values.name,
-          number: values.number,
-        })
-      );
-      onClose();
-    }
+    dispatch(addContact(values));
     options.resetForm();
   };
 
@@ -93,22 +78,10 @@ const ContactForm = ({
             />
             <ErrorMessage name="number" component="p" className={s.error} />
           </label>
-          <div className={s.btnBox}>
-            <button className={s.button} type="submit">
-              {textBtn}
-            </button>
-            {!isAdd && (
-              <button
-                className={s.button}
-                type="button"
-                onClick={() => {
-                  onClose();
-                }}
-              >
-                Cancel
-              </button>
-            )}
-          </div>
+
+          <button className={s.button} type="submit">
+            Add contact
+          </button>
         </Form>
       </Formik>
     </div>

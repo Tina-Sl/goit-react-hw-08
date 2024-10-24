@@ -16,4 +16,3 @@ const filtersSlice = createSlice({
 
 export const searchReducer = filtersSlice.reducer;
 export const { changeSearch } = filtersSlice.actions;
-export const selectFilter = (state) => state.filters.searchStr;

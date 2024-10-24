@@ -1,6 +1,10 @@
-import { createSlice, createSelector, isAnyOf } from "@reduxjs/toolkit";
-import { fetchContacts, addContact, deleteContact } from "./contactsOps";
-import { selectFilter } from "./filtersSlice";
+import { createSlice, isAnyOf } from "@reduxjs/toolkit";
+import {
+  fetchContacts,
+  addContact,
+  deleteContact,
+  updateContact,
+} from "./operations";
 
 const contactsSlice = createSlice({
   name: "contacts",
@@ -20,11 +24,18 @@ const contactsSlice = createSlice({
       .addCase(deleteContact.fulfilled, (state, action) => {
         state.items = state.items.filter((item) => item.id !== action.payload);
       })
+      .addCase(updateContact.fulfilled, (state, action) => {
+        const itemIndex = state.items.findIndex(
+          (item) => item.id === action.payload.id
+        );
+        state.items[itemIndex] = action.payload;
+      })
       .addMatcher(
         isAnyOf(
           fetchContacts.pending,
           addContact.pending,
-          deleteContact.pending
+          deleteContact.pending,
+          updateContact.pending
         ),
         (state) => {
           state.loading = true;
@@ -34,7 +45,8 @@ const contactsSlice = createSlice({
         isAnyOf(
           fetchContacts.fulfilled,
           addContact.fulfilled,
-          deleteContact.fulfilled
+          deleteContact.fulfilled,
+          updateContact.fulfilled
         ),
         (state) => {
           state.loading = false;
@@ -44,7 +56,8 @@ const contactsSlice = createSlice({
         isAnyOf(
           fetchContacts.rejected,
           addContact.rejected,
-          deleteContact.rejected
+          deleteContact.rejected,
+          updateContact.rejected
         ),
         (state, action) => {
           state.loading = false;
@@ -55,15 +68,3 @@ const contactsSlice = createSlice({
 });
 
 export const contactsReducer = contactsSlice.reducer;
-
-export const selectContacts = (state) => state.contacts.items;
-export const selectLoading = (state) => state.contacts.loading;
-export const selectError = (state) => state.contacts.error;
-
-export const selectFilteredContacts = createSelector(
-  [selectContacts, selectFilter],
-  (contacts, searchStr) =>
-    contacts.filter((contact) =>
-      contact.name.toLowerCase().includes(searchStr.toLowerCase().trim())
-    )
-);

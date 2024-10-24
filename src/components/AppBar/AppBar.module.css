@@ -1,0 +1,11 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px;
+  background-color: rgb(31, 28, 28);
+  color: #a39494;
+  font-size: x-large;
+  border-bottom: 5px solid #a39494;
+  height: 40px;
+}

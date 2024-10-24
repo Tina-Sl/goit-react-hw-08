@@ -1,10 +1,14 @@
 .card {
   display: flex;
+  background-color: rgb(217, 224, 224);
+  color: #000;
   align-items: center;
-  border: 1px solid black;
-  border-radius: 4px;
-  padding: 5px 10px;
+  border: 2px solid rgb(1, 11, 54);
+  border-radius: 6px;
+  padding: 5px;
+  padding-left: 10px;
   width: 280px;
+  font-size: 16px;
 }
 
 .cardContent {
@@ -15,5 +19,50 @@
 .cardLine {
   display: flex;
   align-items: center;
+  gap: 10px;
+}
+.btns {
+  display: flex;
   gap: 5px;
+}
+.edit {
+  background-color: rgb(153, 158, 158);
+  color: blue;
+}
+.delete {
+  background-color: rgb(153, 158, 158);
+  color: darkred;
+}
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 320px;
+  background-color: rgb(38, 65, 65);
+  color: beige;
+  z-index: 9;
+  padding: 10px;
+  margin: 80px auto;
+  font-size: 24px;
+  border-radius: 14px;
+  border: 3px solid #01363a;
+}
+.btnBox {
+  display: flex;
+  margin: 0 auto;
+  gap: 20px;
+}
+.btnModal {
+  width: 60px;
+  padding: 5px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+.question {
+  font-size: 24px;
+  margin: 0;
+}
+.questionData {
+  font-size: 24px;
 }

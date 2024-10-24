@@ -1,9 +1,9 @@
 .formWrapper {
-  display: grid;
+  /* display: grid; */
   border: 3px solid black;
   border-radius: 10px;
   width: 320px;
-  padding: 20px;
+  padding: 10px 20px;
   margin-bottom: 20px;
 }
 .error {
@@ -14,28 +14,33 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding: 10px;
-
+  /* gap: 40px;
+  padding: 10px; */
 }
 .label {
   display: flex;
   flex-direction: column;
+  margin-bottom: 10px;
   & span {
-    font-size: 20px;
+    font-size: 16px;
   }
   .input {
-    font-size: 20px;
-    padding: 10px 12px;
+    font-size: 16px;
+    padding: 5px 12px;
     border: 1px solid rgba(72, 72, 72, 0.2);
     border-radius: 6px;
     outline: none;
-    transition: border-color 0.4s ease;
+    background-color: rgb(172, 166, 166);
+    color: #000;
+    /* transition: border-color 0.4s ease; */
   }
-  .input:hover,
+  .input::placeholder {
+    color: #5e5555;
+  }
+  /* .input:hover,
   .input:focus {
-    border-color: black;
-  }
+    border-color: blue;
+  } */
   & p {
     margin: 0;
   }
@@ -43,5 +48,8 @@
 .button {
   margin: 0 auto;
   display: block;
-  margin-top: 20px;
+  margin-top: 10px;
+}
+.btnBox {
+  display: flex;
 }

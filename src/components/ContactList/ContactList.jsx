@@ -5,7 +5,7 @@ import {
   selectError,
   selectFilteredContacts,
   selectLoading,
-} from "../../redux/contactsSlice";
+} from "../../redux/contacts/selectors";
 import s from "./ContactList.module.css";
 
 const ContactList = () => {
@@ -18,7 +18,7 @@ const ContactList = () => {
       {contacts.length === 0 && !loading && !isError ? (
         <Notification text="No contacts" />
       ) : (
-        contacts.map((item) => <Contact key={item.id} {...item} />)
+        contacts.map((item) => <Contact key={item.id} item={item} />)
       )}
     </ul>
   );

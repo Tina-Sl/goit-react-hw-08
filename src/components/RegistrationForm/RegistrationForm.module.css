@@ -1,0 +1,71 @@
+.signup {
+  display: flex;
+  width: 320px;
+  padding: 20px;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background-color: rgb(81, 83, 85);
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.signup .field::placeholder {
+  font-family: FontAwesome;
+  color: silver;
+}
+
+.signup .label .error {
+  margin-top: 0;
+  margin-bottom: 2px;
+  padding-left: 12px;
+  color: rgb(243, 66, 66);
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  & span {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  .field {
+    font-size: 20px;
+    background-color: rgb(42, 44, 46);
+    color: blanchedalmond;
+    padding: 10px 12px;
+    border: 1px solid rgba(72, 72, 72, 0.2);
+    border-radius: 6px;
+    outline: none;
+    transition: border-color 0.4s ease;
+  }
+  .field:hover,
+  .field:focus {
+    border-color: rgb(55, 61, 112);
+  }
+  & p {
+    margin: 0;
+  }
+}
+.button {
+  margin: 0 auto;
+  display: block;
+  margin-top: 20px;
+}
+
+.question {
+  margin-top: 25px;
+  color: rgb(79, 85, 97);
+  font-weight: 700;
+  font-size: 16px;
+  margin: 5px 0 0 0;
+}
+.question > a {
+  color: rgb(111, 119, 135);
+  text-decoration: none;
+}
+.question > a:hover {
+  border-bottom: 1px solid;
+}

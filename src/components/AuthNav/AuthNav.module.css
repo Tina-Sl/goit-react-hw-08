@@ -1,0 +1,18 @@
+.wrapperLinks {
+  display: flex;
+  gap: 40px;
+}
+
+.link {
+  color: #a39494;
+  font-size: x-large;
+  &:hover {
+    color: #83a896;
+  }
+}
+.activeLink {
+  color: #69bdd6;
+  &:hover {
+    color: #83a896;
+  }
+}
