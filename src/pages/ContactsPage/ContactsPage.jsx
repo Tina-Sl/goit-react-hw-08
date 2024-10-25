@@ -20,10 +20,10 @@ const ContactPage = () => {
 
   return (
     <div className="container">
-      <h1>
+      <h3>
         <FaPhoneSquareAlt />
-        &nbsp; Phone book
-      </h1>
+        &nbsp; Contact book service
+      </h3>
       <ContactForm />
       <div>
         <SearchBox />

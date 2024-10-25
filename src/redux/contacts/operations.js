@@ -20,6 +20,7 @@ export const addContact = createAsyncThunk(
   async (newContact, thunkApi) => {
     try {
       const { data } = await goitApi.post("/contacts", newContact);
+      ErrorMessage("Contact added", false);
       return data;
     } catch (error) {
       ErrorMessage("Error. Contact not added");
@@ -33,6 +34,7 @@ export const deleteContact = createAsyncThunk(
   async (id, thunkApi) => {
     try {
       const { data } = await goitApi.delete(`/contacts/${id}`);
+      ErrorMessage("Contact deleted", false);
       return data.id;
     } catch (error) {
       ErrorMessage("Error. Contact not deleted");

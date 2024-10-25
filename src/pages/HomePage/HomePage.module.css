@@ -1,6 +1,13 @@
+.box {
+  width: 370px;
+  height: 400px;
+  border: 6px solid #000;
+  border-radius: 10px;
+}
 .imgCard {
-  width: 320px;
+  min-width: 370px;
   height: 400px;
   display: block;
-  
+  object-fit: cover;
+  overflow: hidden;
 }

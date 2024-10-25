@@ -1,4 +1,3 @@
-// import Modal from "react-modal";
 import ContactForm from "../ContactForm/ContactForm";
 import { useEffect } from "react";
 import ReactDOM from "react-dom";
